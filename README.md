@@ -31,7 +31,7 @@ public class Looper {
         Message msg = myLooper().queue.dequeueMessage();
         for (; ; ) {
             if (msg != null) {
-                msg.target.handleMessage(msg);
+                msg.target.dispatchMessage(msg);
                 msg = msg.next;
             }
         }
