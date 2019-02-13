@@ -10,6 +10,10 @@ public abstract class Handler {
 
     public abstract void handleMessage(Message message);
 
+    public void dispatchMessage(Message msg){
+        handleMessage(msg);
+    }
+
     public void sendMessage(Message msg) {
         msg.target = this;
         looper.getQueue().enqueueMessage(msg);
